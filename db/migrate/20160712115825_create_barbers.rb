@@ -1,5 +1,6 @@
 class CreateBarbers < ActiveRecord::Migration
-  def change
+	def change
+
   	  	create_table :barbers do |t|
   			t.text :name
 
@@ -9,5 +10,6 @@ class CreateBarbers < ActiveRecord::Migration
   		Barber.create :name => 'Jesie Pinkman'
   		Barber.create :name => 'Gus Fring'
   		Barber.create :name => 'Walter White'
-  end
+
+	end
 end

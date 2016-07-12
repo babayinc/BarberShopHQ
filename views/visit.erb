@@ -1,0 +1,47 @@
+<h2>Visit</h2>
+<form action="/visit" method="POST" role="form">
+  <div class="form-group">
+    <label>Your name</label>
+    <input id="aaa" name="username" type="text" class="form-control" placeholder="Enter your name" value ="<%= @user_name %>">
+  </div>
+  <div class="form-group">
+    <label>Your phone</label>
+    <input name="phone" type="text" class="form-control" placeholder="Enter phone" value ="<%= @phone %>">
+  </div>
+  <div class="form-group">
+    <label>When you come</label>
+    <input id= "datetimepicker" name="datetime" type="text" class="form-control" placeholder="Enter date and time" value ="<%= @date_time %>">
+  </div>
+  <div class="form-group">
+    <label>Select barber</label>
+    <select name="baber" class="form-control" value= <%= @master2 %>>
+      <% @barbers.each do |barber| %>
+   	    <option <%= barber['name'] == @barber ? 'selected' : '' %>><%= barber.name %></option>
+      <% end %>
+    </select>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+
+  <select id="color" name="color">
+    <option value="#7bd148">Green</option>
+    <option value="#5484ed">Bold blue</option>
+    <option value="#a4bdfc">Blue</option>
+    <option value="#46d6db">Turquoise</option>
+    <option value="#7ae7bf">Light green</option>
+    <option value="#51b749">Bold green</option>
+    <option value="#fbd75b">Yellow</option>
+    <option value="#ffb878">Orange</option>
+    <option value="#ff887c">Red</option>
+    <option value="#dc2127">Bold red</option>
+    <option value="#dbadff">Purple</option>
+    <option value="#e1e1e1">Gray</option>
+    </select>
+</form>
+
+<script type="text/javascript">
+  $(function(){$('#color').simplecolorpicker()});
+  $('#datetimepicker').datetimepicker({defaultDate:new Date(),
+  format:'d.m.Y H:i',
+  lang:'en'});
+</script>
+
