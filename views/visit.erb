@@ -2,7 +2,7 @@
 <form action="/visit" method="POST" role="form">
   <div class="form-group">
     <label>Your name</label>
-    <input id="aaa" name="username" type="text" class="form-control" placeholder="Enter your name" value ="<%= @user_name %>">
+    <input id="aaa" name="username" type="text" class="form-control" placeholder="Enter your name" value ="<%= @username %>">
   </div>
   <div class="form-group">
     <label>Your phone</label>
@@ -10,11 +10,11 @@
   </div>
   <div class="form-group">
     <label>When you come</label>
-    <input id= "datetimepicker" name="datetime" type="text" class="form-control" placeholder="Enter date and time" value ="<%= @date_time %>">
+    <input id= "datetimepicker" name="datestamp" type="text" class="form-control" placeholder="Enter date and time" value ="<%= @datestamp %>">
   </div>
   <div class="form-group">
     <label>Select barber</label>
-    <select name="baber" class="form-control" value= <%= @master2 %>>
+    <select name="barber" class="form-control" value= <%= @barber %>>
       <% @barbers.each do |barber| %>
    	    <option <%= barber['name'] == @barber ? 'selected' : '' %>><%= barber.name %></option>
       <% end %>
